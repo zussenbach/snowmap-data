@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*.part
+work/
+snowmap_data/

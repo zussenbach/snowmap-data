@@ -1,0 +1,53 @@
+{
+  "folgarida": {
+    "name": "Folgarida-Marilleva",
+    "lat": 46.245,
+    "lon": 10.81,
+    "cerra": true
+  },
+  "skijuwel": {
+    "name": "Ski Juwel Alpbachtal Wildschönau",
+    "lat": 47.42,
+    "lon": 12.0,
+    "cerra": true
+  },
+  "antagnod": {
+    "name": "Monterosa (Antagnod)",
+    "lat": 45.85,
+    "lon": 7.81,
+    "cerra": true
+  },
+  "belpiano": {
+    "name": "Belpiano / Malga San Valentino",
+    "lat": 46.78,
+    "lon": 10.53,
+    "cerra": true
+  },
+  "damuels": {
+    "name": "Damüls-Mellau",
+    "lat": 47.315,
+    "lon": 9.885,
+    "cerra": true
+  },
+  "saas": {
+    "name": "Saastal (Saas-Fee, Saas-Grund, Saas-Almagell)",
+    "lat": 46.1075,
+    "lon": 7.9273,
+    "cerra": true
+  },
+  "vercorin": {
+    "name": "Val d'Anniviers (Vercorin, Saint-Luc, Grimentz, Zinal)",
+    "lat": 46.2565,
+    "lon": 7.5335,
+    "cerra": true,
+    "priority": 10
+  },
+  "skiamade": {
+    "name": "Ski amadé",
+    "lat": 47.235,
+    "lon": 13.34,
+    "half_lat": 0.25,
+    "half_lon": 0.5,
+    "cerra": true
+  }
+}

@@ -1,0 +1,125 @@
+# Copernicus CERRA snowfall, newest January first.
+#
+# Runs every 3 hours by itself (GitHub often starts these late), and while
+# requests are queued at Copernicus it stays on and checks every 5 minutes, so a
+# finished January is saved and the next request sent within minutes. It for every resort marked "cerra": true in
+# resorts.json, and can be started by hand (Actions > CERRA snowfall >
+# Run workflow) for any resort. Each run is short: scripts/cds_queue.py first
+# asks Copernicus how many of the account's requests are queued, downloads
+# finished ones, and only adds new ones up to 3 in the queue (never straight
+# after a refusal); then the downloaded Januaries are processed, rebuilds data/<resort>/<resort>_cerra_snowfall.json and saves it
+# all back to the repository, so the next run carries on from there.
+# Every resort in the app is marked "cerra": true, so any missing January (and
+# each new one from next year on) is fetched by itself.
+name: CERRA snowfall
+
+on:
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      resort:
+        description: 'Resort name from resorts.json (empty = every resort marked "cerra": true)'
+        required: false
+        default: ''
+      harvest_days:
+        description: 'Also look this many days back for finished requests (made by hand too) and save them'
+        required: false
+        default: '3'
+
+permissions:
+  contents: write
+  actions: write
+
+
+jobs:
+  snowfall:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 345
+    steps:
+      # One run at a time. (Not GitHub's 'concurrency' setting: a run that GitHub
+      # wrongly kept 'in progress' after it had finished blocked every later run.)
+      # Another run started in the last 5 hours and still going (e.g. one that is
+      # watching the queue): stop here. (A watcher hands over after ~5 h 20 min,
+      # so the run it starts is never stopped by it.)
+      - name: Only one run at a time
+        id: alone
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          since=$(date -u -d '5 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          others=$(gh api "repos/${{ github.repository }}/actions/workflows/cerra-snowfall.yml/runs?status=in_progress&per_page=20" \
+            --jq "[.workflow_runs[] | select(.id != ${{ github.run_id }} and .run_started_at > \"$since\")] | length" || echo 0)
+          echo "others=$others" >> "$GITHUB_OUTPUT"
+          [ "$others" = "0" ] || echo "Another snowfall run is still going: this one stops."
+
+      - uses: actions/checkout@v6
+        if: steps.alone.outputs.others == '0'
+
+      - uses: actions/setup-python@v6
+        if: steps.alone.outputs.others == '0'
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/requirements-cerra.txt
+
+      - name: Install
+        if: steps.alone.outputs.others == '0'
+        run: pip install -r scripts/requirements-cerra.txt
+
+      - name: Copernicus key
+        if: steps.alone.outputs.others == '0'
+        env:
+          CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
+        run: |
+          if [ -z "$CDSAPI_KEY" ]; then
+            echo "::error::Add your Copernicus API key as the repository secret CDSAPI_KEY (Settings > Secrets and variables > Actions)."
+            exit 1
+          fi
+          printf 'url: https://cds.climate.copernicus.eu/api\nkey: %s\n' "$CDSAPI_KEY" > ~/.cdsapirc
+
+      - name: Which resorts
+        if: steps.alone.outputs.others == '0'
+        id: pick
+        run: |
+          if [ -n "${{ github.event.inputs.resort }}" ]; then
+            echo "list=${{ github.event.inputs.resort }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "list=$(python -c "import json;print(' '.join(k for k,v in json.load(open('resorts.json')).items() if v.get('cerra')))")" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Copernicus queue, processing, save (all resorts, at most 3 requests at a time)
+        if: steps.pick.outputs.list != ''
+        env:
+          CERRA_HARVEST_DAYS: ${{ github.event.inputs.harvest_days || '3' }}
+        run: bash scripts/cerra_cycle.sh "${{ steps.pick.outputs.list }}" "${{ github.event.inputs.resort }}"
+
+      # While this project has requests queued at Copernicus: look every 5 minutes;
+      # as soon as one has finished, save it, process it and send the next one.
+      # After ~5 h 20 min a fresh run takes over (GitHub stops a job at 6 h).
+      - name: Keep watching while requests are queued
+        if: steps.pick.outputs.list != '' && github.event.inputs.resort == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CYCLE_KIND: watching
+        run: |
+          end=$(( $(date +%s) + 320 * 60 ))
+          while [ "$(date +%s)" -lt "$end" ]; do
+            n=$(python scripts/cds_pending.py || echo 1)
+            if [ "$n" = "0" ]; then echo "No requests queued any more: done."; exit 0; fi
+            echo "$(date -u +%H:%M) · $n request(s) still at Copernicus"
+            sleep 300
+            if python scripts/cds_pending.py --changed; then
+              bash scripts/cerra_cycle.sh "${{ steps.pick.outputs.list }}"
+            fi
+          done
+          echo "Handing over to a fresh run."
+          gh workflow run cerra-snowfall.yml --ref main -R "${{ github.repository }}"
+
+      - name: Summary
+        if: steps.alone.outputs.others == '0' && (always())
+        run: |
+          for f in data/*/*_cerra_snowfall.json; do
+            [ -f "$f" ] && python -c "import json,sys;d=json.load(open('$f'));print('$f'.split('/')[1]+':', ', '.join(d['years_available']) or 'no years yet')" >> "$GITHUB_STEP_SUMMARY"
+          done
+          true

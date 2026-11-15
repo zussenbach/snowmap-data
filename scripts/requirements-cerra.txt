@@ -1,0 +1,6 @@
+cdsapi>=0.7.4
+xarray
+cfgrib
+eccodes>=2.37
+numpy
+requests

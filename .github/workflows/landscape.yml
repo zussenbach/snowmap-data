@@ -1,0 +1,55 @@
+# OpenStreetMap + terrain for one resort (run by hand once per resort):
+# Actions > Landscape > Run workflow > resort name.
+# Runs scripts/landscape/<resort>_landscape.py and offers its
+# <resort>_landscape_part*.zip files for download on the run's page.
+name: Landscape
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      resort:
+        description: 'Resort name (runs scripts/landscape/<resort>_landscape.py)'
+        required: true
+
+jobs:
+  landscape:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install GDAL
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q gdal-bin python3-gdal python3-numpy
+
+      - name: Make the landscape
+        run: |
+          mkdir -p work && cd work
+          cp ../scripts/osm_fetch.py .
+          # the system Python, which has GDAL
+          set -o pipefail
+          /usr/bin/python3 -u "../scripts/landscape/${{ github.event.inputs.resort }}_landscape.py" 2>&1 | tee landscape.log
+
+      # also saved to the branch landscape-<resort>, so it can be fetched with git
+      - name: Save to the branch landscape-${{ github.event.inputs.resort }}
+        if: always()
+        env:
+          R: ${{ github.event.inputs.resort }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir out; cp work/*_landscape_part*.zip out/ 2>/dev/null || true; cp work/landscape.log out/ 2>/dev/null || true; cd out
+          git init -q -b "landscape-$R"
+          git config user.name "snowmap bot"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add . && git commit -q -m "$R landscape ($(ls | wc -l) parts)"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}" "landscape-$R"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ${{ github.event.inputs.resort }}-landscape
+          path: work/*_landscape_part*.zip
+          compression-level: 0
+          retention-days: 30
