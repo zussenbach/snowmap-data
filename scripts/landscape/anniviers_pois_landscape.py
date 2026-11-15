@@ -1,38 +1,49 @@
 """
-Val d'Anniviers: points of interest for the snow map, from OpenStreetMap
-(restaurants, huts, rescue, parking, information, ski schools, ice rinks,
-playgrounds, sledging / cross-country / ski-touring / snowshoe routes, snow parks).
+Val d'Anniviers: restaurants, huts, ski schools and ice rinks for the snow map,
+from OpenStreetMap (points only, a small and quick request).
 
-Makes anniviers_pois_landscape_part1.zip with anniviers_pois.geojson.
+Makes anniviers_pois_landscape_part1.zip with anniviers_pois.json.
 Runs on GitHub: Actions > Landscape > anniviers_pois.
 """
-import json, os, sys, zipfile
-sys.path.insert(0, os.getcwd())
-from osm_fetch import overpass, to_geojson
+import json, time, urllib.parse, urllib.request, zipfile
 
-BBOX = (46.05, 7.355, 46.351, 7.74)     # south, west, north, east (whole Val d'Anniviers map)
-Q = '''[out:json][timeout:600][bbox:{bbox}];
+SERVERS = ['https://overpass-api.de/api/interpreter',
+           'https://overpass.private.coffee/api/interpreter',
+           'https://maps.mail.ru/osm/tools/overpass/api/interpreter']
+BBOX = '46.05,7.355,46.351,7.74'      # south, west, north, east (whole Val d'Anniviers map)
+Q = f'''[out:json][timeout:120][bbox:{BBOX}];
 (
-  nwr["amenity"~"^(restaurant|cafe|bar|fast_food|pub|biergarten|ice_cream|shelter|parking|ski_school|first_aid|toilets)$"];
-  nwr["tourism"~"^(alpine_hut|wilderness_hut|information|viewpoint|picnic_site|hotel|guest_house|chalet)$"];
-  nwr["emergency"]; nwr["healthcare"];
-  nwr["leisure"~"^(ice_rink|playground|sports_centre|pitch)$"];
-  nwr["sport"~"^(skiing|ice_skating|paragliding|free_flying|sledding)$"];
-  nwr["piste:type"~"^(sled|nordic|skitour|hike|snow_park|playground|fatbike)$"];
-  nwr["aerialway"="station"];
-  nwr["shop"~"^(ski|sports)$"];
+  nw["amenity"~"^(restaurant|cafe|bar|fast_food|pub|biergarten|ski_school)$"];
+  nw["tourism"~"^(alpine_hut|wilderness_hut)$"];
+  nw["leisure"="ice_rink"];
 );
-out geom;'''
+out center tags;'''
 
-feats, seen = [], set()
-data = overpass(Q.format(bbox='{:.4f},{:.4f},{:.4f},{:.4f}'.format(*BBOX)))
-for f in to_geojson(data):
-    if f['id'] not in seen:
-        seen.add(f['id']); feats.append(f)
-out = 'anniviers_pois.geojson'
-json.dump({'type': 'FeatureCollection', 'generator': 'snowmap osm_fetch (Overpass API)',
-           'copyright': 'The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.',
-           'features': feats}, open(out, 'w', encoding='utf-8'), ensure_ascii=False)
-print(f'{len(feats)} features saved')
+data = None
+for attempt in range(4):
+    for url in SERVERS:
+        try:
+            print('asking', url.split('/')[2], flush=True)
+            req = urllib.request.Request(url, data=urllib.parse.urlencode({'data': Q}).encode(),
+                                         headers={'User-Agent': 'snowmap-resort-builder/1.0 (personal snow map project)'})
+            with urllib.request.urlopen(req, timeout=180) as r:
+                data = json.loads(r.read().decode('utf-8'))
+            break
+        except Exception as e:
+            print('  ', e, flush=True)
+    if data:
+        break
+    time.sleep(20)
+if not data:
+    raise SystemExit('Overpass did not answer')
+
+out = []
+for e in data['elements']:
+    c = e.get('center') or e
+    if 'lat' in c:
+        out.append({'id': f"{e['type']}/{e['id']}", 'lat': c['lat'], 'lon': c['lon'], 'tags': e.get('tags', {})})
+json.dump({'copyright': 'OpenStreetMap contributors, ODbL', 'features': out},
+          open('anniviers_pois.json', 'w', encoding='utf-8'), ensure_ascii=False)
+print(len(out), 'points saved')
 with zipfile.ZipFile('anniviers_pois_landscape_part1.zip', 'w', zipfile.ZIP_DEFLATED) as z:
-    z.write(out)
+    z.write('anniviers_pois.json')
