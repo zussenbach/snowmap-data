@@ -1,16 +1,12 @@
-=== 2026-11-16 06:22 UTC · run 43816266636 · schedule
-[antagnod 2022] finished request 6cfa3c9a-26b2-4153-97bc-536f353d46f5 found and downloaded
-[vercorin 2012] finished request 706a6d8d-a9aa-4055-a3dd-105f49e3022e found and downloaded
-[vercorin 2013] finished request 452dddde-a0e1-4962-bf66-d8d121fcbf86 found and downloaded
-Checked the finished requests of the last 3 days: 3 new January(s) saved.
-2026-11-16 06:23:39,926 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
-The account has 0 request(s) queued or running (at most 3); 11 January(s) still to request.
-2026-11-16 06:23:43,897 INFO Request ID is 1ed7a12b-80ec-42a8-96ab-69616df44e0c
-[skiamade 2022] sent: request 1ed7a12b-80ec-42a8-96ab-69616df44e0c (running)
-2026-11-16 06:24:22,673 INFO Request ID is d4583cd1-8885-408c-9f57-4e13d7271a62
-[skiamade 2021] sent: request d4583cd1-8885-408c-9f57-4e13d7271a62 (accepted)
-2026-11-16 06:25:19,906 INFO Request ID is 19babad0-6a36-4f0a-863b-6f5d0c9807d6
-[skiamade 2020] sent: request 19babad0-6a36-4f0a-863b-6f5d0c9807d6 (accepted)
+=== 2026-11-16 06:32 UTC · run 43816266636 · watching
+[skiamade 2022] finished request 1ed7a12b-80ec-42a8-96ab-69616df44e0c found and downloaded
+Checked the finished requests of the last 3 days: 1 new January(s) saved.
+2026-11-16 06:33:27,128 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
+[skiamade 2021] request d4583cd1-8885-408c-9f57-4e13d7271a62: accepted
+[skiamade 2020] request 19babad0-6a36-4f0a-863b-6f5d0c9807d6: accepted
+The account has 2 request(s) queued or running (at most 3); 8 January(s) still to request.
+2026-11-16 06:33:31,594 INFO Request ID is 5fa4522f-a50e-4ac3-bd09-084b164eecfc
+[skiamade 2019] sent: request 5fa4522f-a50e-4ac3-bd09-084b164eecfc (accepted)
 folgarida: [2026] processed
 folgarida: [2025] processed
 folgarida: [2024] processed
@@ -103,4 +99,5 @@ skiamade: [2026] processed
 skiamade: [2025] processed
 skiamade: [2024] processed
 skiamade: [2023] processed
-skiamade: Saved /home/runner/work/snowmap-data/snowmap-data/data/skiamade/skiamade_cerra_snowfall.json: 231 points, years 2023, 2024, 2025, 2026
+skiamade: [2022] processed
+skiamade: Saved /home/runner/work/snowmap-data/snowmap-data/data/skiamade/skiamade_cerra_snowfall.json: 231 points, years 2022, 2023, 2024, 2025, 2026
