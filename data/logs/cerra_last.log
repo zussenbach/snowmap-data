@@ -1,12 +1,11 @@
-=== 2026-11-16 17:07 UTC · run 43861466755 · watching
-[skiamade 2018] finished request fa6e33ed-5f93-4397-8a9f-cafa83fefb92 found and downloaded
-Checked the finished requests of the last 3 days: 1 new January(s) saved.
-2026-11-16 17:08:05,399 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
+=== 2026-11-16 17:16 UTC · run 43916571882 · workflow_dispatch
+Checked the finished requests of the last 3 days: 0 new January(s) saved.
+2026-11-16 17:17:35,623 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
 [damuels 2017] request 83ce5416-c44d-4b29-a893-62dc94087ee9: accepted
+[damuels 2016] request da491893-1ded-4e86-914c-27fd17a4d08d: accepted
 [skiamade 2017] request 8c573b34-1d08-44c4-ad60-f2ae749150ee: accepted
-The account has 2 request(s) queued or running (at most 3); 4 January(s) still to request.
-2026-11-16 17:08:08,807 INFO Request ID is da491893-1ded-4e86-914c-27fd17a4d08d
-[damuels 2016] sent: request da491893-1ded-4e86-914c-27fd17a4d08d (accepted)
+The account has 3 request(s) queued or running (at most 3); 3 January(s) still to request.
+The queue is full: new requests wait until one of the queued ones has finished.
 folgarida: [2026] processed
 folgarida: [2025] processed
 folgarida: [2024] processed
