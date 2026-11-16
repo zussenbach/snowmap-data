@@ -1,12 +1,12 @@
-=== 2026-11-16 12:57 UTC · run 43861466755 · watching
-[skiamade 2019] finished request 5fa4522f-a50e-4ac3-bd09-084b164eecfc found and downloaded
+=== 2026-11-16 17:07 UTC · run 43861466755 · watching
+[skiamade 2018] finished request fa6e33ed-5f93-4397-8a9f-cafa83fefb92 found and downloaded
 Checked the finished requests of the last 3 days: 1 new January(s) saved.
-2026-11-16 12:58:05,958 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
+2026-11-16 17:08:05,399 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
 [damuels 2017] request 83ce5416-c44d-4b29-a893-62dc94087ee9: accepted
-[skiamade 2018] request fa6e33ed-5f93-4397-8a9f-cafa83fefb92: accepted
-The account has 2 request(s) queued or running (at most 3); 5 January(s) still to request.
-2026-11-16 12:58:07,812 INFO Request ID is 8c573b34-1d08-44c4-ad60-f2ae749150ee
-[skiamade 2017] sent: request 8c573b34-1d08-44c4-ad60-f2ae749150ee (accepted)
+[skiamade 2017] request 8c573b34-1d08-44c4-ad60-f2ae749150ee: accepted
+The account has 2 request(s) queued or running (at most 3); 4 January(s) still to request.
+2026-11-16 17:08:08,807 INFO Request ID is da491893-1ded-4e86-914c-27fd17a4d08d
+[damuels 2016] sent: request da491893-1ded-4e86-914c-27fd17a4d08d (accepted)
 folgarida: [2026] processed
 folgarida: [2025] processed
 folgarida: [2024] processed
@@ -103,4 +103,5 @@ skiamade: [2022] processed
 skiamade: [2021] processed
 skiamade: [2020] processed
 skiamade: [2019] processed
-skiamade: Saved /home/runner/work/snowmap-data/snowmap-data/data/skiamade/skiamade_cerra_snowfall.json: 231 points, years 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+skiamade: [2018] processed
+skiamade: Saved /home/runner/work/snowmap-data/snowmap-data/data/skiamade/skiamade_cerra_snowfall.json: 231 points, years 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
