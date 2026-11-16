@@ -1,11 +1,12 @@
-=== 2026-11-16 17:16 UTC · run 43916571882 · workflow_dispatch
-Checked the finished requests of the last 3 days: 0 new January(s) saved.
-2026-11-16 17:17:35,623 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
-[damuels 2017] request 83ce5416-c44d-4b29-a893-62dc94087ee9: accepted
+=== 2026-11-16 20:15 UTC · run 43916571882 · watching
+[damuels 2017] finished request 83ce5416-c44d-4b29-a893-62dc94087ee9 found and downloaded
+Checked the finished requests of the last 3 days: 1 new January(s) saved.
+2026-11-16 20:16:16,051 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
 [damuels 2016] request da491893-1ded-4e86-914c-27fd17a4d08d: accepted
 [skiamade 2017] request 8c573b34-1d08-44c4-ad60-f2ae749150ee: accepted
-The account has 3 request(s) queued or running (at most 3); 3 January(s) still to request.
-The queue is full: new requests wait until one of the queued ones has finished.
+The account has 2 request(s) queued or running (at most 3); 3 January(s) still to request.
+2026-11-16 20:16:20,004 INFO Request ID is 3db35032-e3a9-4cdd-84be-43602a37116b
+[skiamade 2016] sent: request 3db35032-e3a9-4cdd-84be-43602a37116b (accepted)
 folgarida: [2026] processed
 folgarida: [2025] processed
 folgarida: [2024] processed
@@ -67,7 +68,8 @@ damuels: [2021] processed
 damuels: [2020] processed
 damuels: [2019] processed
 damuels: [2018] processed
-damuels: Saved /home/runner/work/snowmap-data/snowmap-data/data/damuels/damuels_cerra_snowfall.json: 121 points, years 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+damuels: [2017] processed
+damuels: Saved /home/runner/work/snowmap-data/snowmap-data/data/damuels/damuels_cerra_snowfall.json: 121 points, years 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
 saas: [2026] processed
 saas: [2025] processed
 saas: [2024] processed
