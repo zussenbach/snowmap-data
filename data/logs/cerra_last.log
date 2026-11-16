@@ -1,12 +1,16 @@
-=== 2026-11-15 22:35 UTC · run 43770138857 · workflow_dispatch
-[vercorin 2014] finished request 4406f2f4-7261-4cfa-879f-61ecb7e21848 found and downloaded
-[skiamade 2023] finished request 657a061e-6d5d-408b-889e-d4955ec3d93f found and downloaded
-[antagnod 2023] finished request b5e6262f-585f-4980-b094-2da1667f1b20 found and downloaded
-[skiamade 2024] finished request 3e71719b-974f-4906-91d3-22d8855914b2 found and downloaded
-Checked the finished requests of the last 3 days: 4 new January(s) saved.
-2026-11-15 22:37:03,651 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
-The account has 3 request(s) queued or running (at most 3); 12 January(s) still to request.
-The queue is full: new requests wait until one of the queued ones has finished.
+=== 2026-11-16 06:22 UTC · run 43816266636 · schedule
+[antagnod 2022] finished request 6cfa3c9a-26b2-4153-97bc-536f353d46f5 found and downloaded
+[vercorin 2012] finished request 706a6d8d-a9aa-4055-a3dd-105f49e3022e found and downloaded
+[vercorin 2013] finished request 452dddde-a0e1-4962-bf66-d8d121fcbf86 found and downloaded
+Checked the finished requests of the last 3 days: 3 new January(s) saved.
+2026-11-16 06:23:39,926 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
+The account has 0 request(s) queued or running (at most 3); 11 January(s) still to request.
+2026-11-16 06:23:43,897 INFO Request ID is 1ed7a12b-80ec-42a8-96ab-69616df44e0c
+[skiamade 2022] sent: request 1ed7a12b-80ec-42a8-96ab-69616df44e0c (running)
+2026-11-16 06:24:22,673 INFO Request ID is d4583cd1-8885-408c-9f57-4e13d7271a62
+[skiamade 2021] sent: request d4583cd1-8885-408c-9f57-4e13d7271a62 (accepted)
+2026-11-16 06:25:19,906 INFO Request ID is 19babad0-6a36-4f0a-863b-6f5d0c9807d6
+[skiamade 2020] sent: request 19babad0-6a36-4f0a-863b-6f5d0c9807d6 (accepted)
 folgarida: [2026] processed
 folgarida: [2025] processed
 folgarida: [2024] processed
@@ -37,6 +41,7 @@ antagnod: [2026] processed
 antagnod: [2025] processed
 antagnod: [2024] processed
 antagnod: [2023] processed
+antagnod: [2022] processed
 antagnod: [2021] processed
 antagnod: [2020] processed
 antagnod: [2019] processed
@@ -44,7 +49,7 @@ antagnod: [2018] processed
 antagnod: [2017] processed
 antagnod: [2016] processed
 antagnod: [2015] processed
-antagnod: Saved /home/runner/work/snowmap-data/snowmap-data/data/antagnod/antagnod_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2023, 2024, 2025, 2026
+antagnod: Saved /home/runner/work/snowmap-data/snowmap-data/data/antagnod/antagnod_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
 belpiano: [2026] processed
 belpiano: [2025] processed
 belpiano: [2024] processed
