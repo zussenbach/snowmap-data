@@ -40,7 +40,8 @@
     "lat": 46.2565,
     "lon": 7.5335,
     "cerra": true,
-    "priority": 10
+    "priority": 10,
+    "first_year": 2012
   },
   "skiamade": {
     "name": "Ski amadé",
