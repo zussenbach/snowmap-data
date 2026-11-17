@@ -1,8 +1,7 @@
-=== 2026-11-17 04:27 UTC · run 44012865201 · watching
-[damuels 2015] finished request d4c42568-6249-4e01-a57e-1237ecf2e8f5 found and downloaded
+=== 2026-11-17 06:51 UTC · run 44012865201 · watching
+[skiamade 2015] finished request 2394dfb0-b794-45c6-8be9-59155a825bc4 found and downloaded
 Checked the finished requests of the last 3 days: 1 new January(s) saved.
-2026-11-17 04:29:00,590 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
-[skiamade 2015] request 2394dfb0-b794-45c6-8be9-59155a825bc4: accepted
+2026-11-17 06:52:57,432 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
 folgarida: [2026] processed
 folgarida: [2025] processed
 folgarida: [2024] processed
@@ -105,4 +104,5 @@ skiamade: [2019] processed
 skiamade: [2018] processed
 skiamade: [2017] processed
 skiamade: [2016] processed
-skiamade: Saved /home/runner/work/snowmap-data/snowmap-data/data/skiamade/skiamade_cerra_snowfall.json: 231 points, years 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+skiamade: [2015] processed
+skiamade: Saved /home/runner/work/snowmap-data/snowmap-data/data/skiamade/skiamade_cerra_snowfall.json: 231 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
