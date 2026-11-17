@@ -1,12 +1,9 @@
-=== 2026-11-17 00:17 UTC · run 43972569905 · watching
-[skiamade 2016] finished request 3db35032-e3a9-4cdd-84be-43602a37116b found and downloaded
+=== 2026-11-17 02:13 UTC · run 43972569905 · watching
+[damuels 2016] finished request da491893-1ded-4e86-914c-27fd17a4d08d found and downloaded
 Checked the finished requests of the last 3 days: 1 new January(s) saved.
-2026-11-17 00:18:08,694 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
-[damuels 2016] request da491893-1ded-4e86-914c-27fd17a4d08d: accepted
+2026-11-17 02:14:14,177 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
 [damuels 2015] request d4c42568-6249-4e01-a57e-1237ecf2e8f5: accepted
-The account has 2 request(s) queued or running (at most 3); 1 January(s) still to request.
-2026-11-17 00:18:10,296 INFO Request ID is 2394dfb0-b794-45c6-8be9-59155a825bc4
-[skiamade 2015] sent: request 2394dfb0-b794-45c6-8be9-59155a825bc4 (accepted)
+[skiamade 2015] request 2394dfb0-b794-45c6-8be9-59155a825bc4: accepted
 folgarida: [2026] processed
 folgarida: [2025] processed
 folgarida: [2024] processed
@@ -69,7 +66,8 @@ damuels: [2020] processed
 damuels: [2019] processed
 damuels: [2018] processed
 damuels: [2017] processed
-damuels: Saved /home/runner/work/snowmap-data/snowmap-data/data/damuels/damuels_cerra_snowfall.json: 121 points, years 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+damuels: [2016] processed
+damuels: Saved /home/runner/work/snowmap-data/snowmap-data/data/damuels/damuels_cerra_snowfall.json: 121 points, years 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
 saas: [2026] processed
 saas: [2025] processed
 saas: [2024] processed
