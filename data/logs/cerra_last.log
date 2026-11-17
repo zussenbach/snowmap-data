@@ -1,7 +1,6 @@
-=== 2026-11-17 06:51 UTC · run 44012865201 · watching
-[skiamade 2015] finished request 2394dfb0-b794-45c6-8be9-59155a825bc4 found and downloaded
-Checked the finished requests of the last 3 days: 1 new January(s) saved.
-2026-11-17 06:52:57,432 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
+=== 2026-11-17 15:57 UTC · run 44120114886 · schedule
+Checked the finished requests of the last 3 days: 0 new January(s) saved.
+2026-11-17 15:58:44,465 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
 folgarida: [2026] processed
 folgarida: [2025] processed
 folgarida: [2024] processed
@@ -92,7 +91,10 @@ vercorin: [2018] processed
 vercorin: [2017] processed
 vercorin: [2016] processed
 vercorin: [2015] processed
-vercorin: Saved /home/runner/work/snowmap-data/snowmap-data/data/vercorin/vercorin_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+vercorin: [2014] processed
+vercorin: [2013] processed
+vercorin: [2012] processed
+vercorin: Saved /home/runner/work/snowmap-data/snowmap-data/data/vercorin/vercorin_cerra_snowfall.json: 121 points, years 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
 skiamade: [2026] processed
 skiamade: [2025] processed
 skiamade: [2024] processed
