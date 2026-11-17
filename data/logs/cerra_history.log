@@ -55,114 +55,6 @@ skiamade: [2021] processed
 skiamade: [2020] processed
 skiamade: [2019] processed
 skiamade: [2018] processed
-skiamade: Saved /home/runner/work/snowmap-data/snowmap-data/data/skiamade/skiamade_cerra_snowfall.json: 231 points, years 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
-=== 2026-11-16 22:22 UTC · run 43916571882 · watching
-[skiamade 2017] finished request 8c573b34-1d08-44c4-ad60-f2ae749150ee found and downloaded
-Checked the finished requests of the last 3 days: 1 new January(s) saved.
-2026-11-16 22:23:51,453 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
-[damuels 2016] request da491893-1ded-4e86-914c-27fd17a4d08d: accepted
-[skiamade 2016] request 3db35032-e3a9-4cdd-84be-43602a37116b: accepted
-The account has 2 request(s) queued or running (at most 3); 2 January(s) still to request.
-2026-11-16 22:23:54,389 INFO Request ID is d4c42568-6249-4e01-a57e-1237ecf2e8f5
-[damuels 2015] sent: request d4c42568-6249-4e01-a57e-1237ecf2e8f5 (accepted)
-folgarida: [2026] processed
-folgarida: [2025] processed
-folgarida: [2024] processed
-folgarida: [2023] processed
-folgarida: [2022] processed
-folgarida: [2021] processed
-folgarida: [2020] processed
-folgarida: [2019] processed
-folgarida: [2018] processed
-folgarida: [2017] processed
-folgarida: [2016] processed
-folgarida: [2015] processed
-folgarida: Saved /home/runner/work/snowmap-data/snowmap-data/data/folgarida/folgarida_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
-skijuwel: [2026] processed
-skijuwel: [2025] processed
-skijuwel: [2024] processed
-skijuwel: [2023] processed
-skijuwel: [2022] processed
-skijuwel: [2021] processed
-skijuwel: [2020] processed
-skijuwel: [2019] processed
-skijuwel: [2018] processed
-skijuwel: [2017] processed
-skijuwel: [2016] processed
-skijuwel: [2015] processed
-skijuwel: Saved /home/runner/work/snowmap-data/snowmap-data/data/skijuwel/skijuwel_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
-antagnod: [2026] processed
-antagnod: [2025] processed
-antagnod: [2024] processed
-antagnod: [2023] processed
-antagnod: [2022] processed
-antagnod: [2021] processed
-antagnod: [2020] processed
-antagnod: [2019] processed
-antagnod: [2018] processed
-antagnod: [2017] processed
-antagnod: [2016] processed
-antagnod: [2015] processed
-antagnod: Saved /home/runner/work/snowmap-data/snowmap-data/data/antagnod/antagnod_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
-belpiano: [2026] processed
-belpiano: [2025] processed
-belpiano: [2024] processed
-belpiano: [2023] processed
-belpiano: [2022] processed
-belpiano: [2021] processed
-belpiano: [2020] processed
-belpiano: [2019] processed
-belpiano: [2018] processed
-belpiano: [2017] processed
-belpiano: [2016] processed
-belpiano: [2015] processed
-belpiano: Saved /home/runner/work/snowmap-data/snowmap-data/data/belpiano/belpiano_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
-damuels: [2026] processed
-damuels: [2025] processed
-damuels: [2024] processed
-damuels: [2023] processed
-damuels: [2022] processed
-damuels: [2021] processed
-damuels: [2020] processed
-damuels: [2019] processed
-damuels: [2018] processed
-damuels: [2017] processed
-damuels: Saved /home/runner/work/snowmap-data/snowmap-data/data/damuels/damuels_cerra_snowfall.json: 121 points, years 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
-saas: [2026] processed
-saas: [2025] processed
-saas: [2024] processed
-saas: [2023] processed
-saas: [2022] processed
-saas: [2021] processed
-saas: [2020] processed
-saas: [2019] processed
-saas: [2018] processed
-saas: [2017] processed
-saas: [2016] processed
-saas: [2015] processed
-saas: Saved /home/runner/work/snowmap-data/snowmap-data/data/saas/saas_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
-vercorin: [2026] processed
-vercorin: [2025] processed
-vercorin: [2024] processed
-vercorin: [2023] processed
-vercorin: [2022] processed
-vercorin: [2021] processed
-vercorin: [2020] processed
-vercorin: [2019] processed
-vercorin: [2018] processed
-vercorin: [2017] processed
-vercorin: [2016] processed
-vercorin: [2015] processed
-vercorin: Saved /home/runner/work/snowmap-data/snowmap-data/data/vercorin/vercorin_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
-skiamade: [2026] processed
-skiamade: [2025] processed
-skiamade: [2024] processed
-skiamade: [2023] processed
-skiamade: [2022] processed
-skiamade: [2021] processed
-skiamade: [2020] processed
-skiamade: [2019] processed
-skiamade: [2018] processed
 skiamade: [2017] processed
 skiamade: Saved /home/runner/work/snowmap-data/snowmap-data/data/skiamade/skiamade_cerra_snowfall.json: 231 points, years 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
 === 2026-11-16 22:42 UTC · run 43972569905 · workflow_dispatch
@@ -560,6 +452,114 @@ damuels: [2018] processed
 damuels: [2017] processed
 damuels: [2016] processed
 damuels: Saved /home/runner/work/snowmap-data/snowmap-data/data/damuels/damuels_cerra_snowfall.json: 121 points, years 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+saas: [2026] processed
+saas: [2025] processed
+saas: [2024] processed
+saas: [2023] processed
+saas: [2022] processed
+saas: [2021] processed
+saas: [2020] processed
+saas: [2019] processed
+saas: [2018] processed
+saas: [2017] processed
+saas: [2016] processed
+saas: [2015] processed
+saas: Saved /home/runner/work/snowmap-data/snowmap-data/data/saas/saas_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+vercorin: [2026] processed
+vercorin: [2025] processed
+vercorin: [2024] processed
+vercorin: [2023] processed
+vercorin: [2022] processed
+vercorin: [2021] processed
+vercorin: [2020] processed
+vercorin: [2019] processed
+vercorin: [2018] processed
+vercorin: [2017] processed
+vercorin: [2016] processed
+vercorin: [2015] processed
+vercorin: Saved /home/runner/work/snowmap-data/snowmap-data/data/vercorin/vercorin_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+skiamade: [2026] processed
+skiamade: [2025] processed
+skiamade: [2024] processed
+skiamade: [2023] processed
+skiamade: [2022] processed
+skiamade: [2021] processed
+skiamade: [2020] processed
+skiamade: [2019] processed
+skiamade: [2018] processed
+skiamade: [2017] processed
+skiamade: [2016] processed
+skiamade: Saved /home/runner/work/snowmap-data/snowmap-data/data/skiamade/skiamade_cerra_snowfall.json: 231 points, years 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+=== 2026-11-17 04:27 UTC · run 44012865201 · watching
+[damuels 2015] finished request d4c42568-6249-4e01-a57e-1237ecf2e8f5 found and downloaded
+Checked the finished requests of the last 3 days: 1 new January(s) saved.
+2026-11-17 04:29:00,590 INFO [2026-10-06T00:00:00Z] **Data Stores Service protection measures** affecting data downloads and account access: [please read our Announcement](https://forum.ecmwf.int/t/data-stores-service-protection-measures-affecting-data-downloads-and-account-access-cds-ads-ewds-ecds/15481) before enquiring with ECMWF Support.
+[skiamade 2015] request 2394dfb0-b794-45c6-8be9-59155a825bc4: accepted
+folgarida: [2026] processed
+folgarida: [2025] processed
+folgarida: [2024] processed
+folgarida: [2023] processed
+folgarida: [2022] processed
+folgarida: [2021] processed
+folgarida: [2020] processed
+folgarida: [2019] processed
+folgarida: [2018] processed
+folgarida: [2017] processed
+folgarida: [2016] processed
+folgarida: [2015] processed
+folgarida: Saved /home/runner/work/snowmap-data/snowmap-data/data/folgarida/folgarida_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+skijuwel: [2026] processed
+skijuwel: [2025] processed
+skijuwel: [2024] processed
+skijuwel: [2023] processed
+skijuwel: [2022] processed
+skijuwel: [2021] processed
+skijuwel: [2020] processed
+skijuwel: [2019] processed
+skijuwel: [2018] processed
+skijuwel: [2017] processed
+skijuwel: [2016] processed
+skijuwel: [2015] processed
+skijuwel: Saved /home/runner/work/snowmap-data/snowmap-data/data/skijuwel/skijuwel_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+antagnod: [2026] processed
+antagnod: [2025] processed
+antagnod: [2024] processed
+antagnod: [2023] processed
+antagnod: [2022] processed
+antagnod: [2021] processed
+antagnod: [2020] processed
+antagnod: [2019] processed
+antagnod: [2018] processed
+antagnod: [2017] processed
+antagnod: [2016] processed
+antagnod: [2015] processed
+antagnod: Saved /home/runner/work/snowmap-data/snowmap-data/data/antagnod/antagnod_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+belpiano: [2026] processed
+belpiano: [2025] processed
+belpiano: [2024] processed
+belpiano: [2023] processed
+belpiano: [2022] processed
+belpiano: [2021] processed
+belpiano: [2020] processed
+belpiano: [2019] processed
+belpiano: [2018] processed
+belpiano: [2017] processed
+belpiano: [2016] processed
+belpiano: [2015] processed
+belpiano: Saved /home/runner/work/snowmap-data/snowmap-data/data/belpiano/belpiano_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+damuels: [2026] processed
+damuels: [2025] processed
+damuels: [2024] processed
+damuels: [2023] processed
+damuels: [2022] processed
+damuels: [2021] processed
+damuels: [2020] processed
+damuels: [2019] processed
+damuels: [2018] processed
+damuels: [2017] processed
+damuels: [2016] processed
+damuels: [2015] processed
+damuels: Saved /home/runner/work/snowmap-data/snowmap-data/data/damuels/damuels_cerra_snowfall.json: 121 points, years 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
 saas: [2026] processed
 saas: [2025] processed
 saas: [2024] processed
