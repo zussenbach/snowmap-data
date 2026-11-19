@@ -1,0 +1,55 @@
+name: Landscape render (Blender)
+# Renders the textures of the interactive Blender landscape of a resort, straight
+# down, in parallel: 8 jobs for the 1 km squares around pistes and lifts, 1 job
+# for the whole-frame picture. Inputs come from the branch model-inputs-<resort>;
+# each job saves its pictures to the branch model-out-<resort>-<part>.
+# Started by hand (or by Claude). Public repo: the minutes are free.
+on:
+  workflow_dispatch:
+    inputs:
+      resort:
+        description: resort id (e.g. vercorin)
+        default: vercorin
+      size:
+        description: pixels per 1 km square
+        default: '1024'
+      samples:
+        description: render samples
+        default: '32'
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [base, 0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: model-inputs-${{ inputs.resort }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Blender (as a Python module) and helpers
+        run: pip install -q bpy==5.3.0 tifffile scipy numpy
+      - name: Render
+        run: |
+          if [ "${{ matrix.part }}" = base ]; then
+            python -u render_tiles_blender.py base 4096 "${{ inputs.samples }}" 2>&1 | grep -v "Fra:\|Deprecat" | tail -40
+          else
+            python -u render_tiles_blender.py cells "${{ matrix.part }}" 8 "${{ inputs.size }}" "${{ inputs.samples }}" 2>&1 | grep -v "Fra:\|Deprecat\|render           |" | tail -60
+          fi
+      - name: Save to the branch model-out-<resort>-<part>
+        env:
+          R: ${{ inputs.resort }}
+          P: ${{ matrix.part }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir out; [ -d tiles ] && cp -r tiles out/; [ -f base.jpg ] && cp base.jpg out/; cd out
+          git init -q -b "model-out-$R-$P"
+          git config user.name "snowmap bot"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add . && git commit -q -m "$R landscape render, part $P"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/zussenbach/snowmap-data" "model-out-$R-$P"
