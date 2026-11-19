@@ -20,7 +20,6 @@ STAC = 'https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbu
 LL_BOX = (7.36, 46.06, 7.73, 46.35)        # the Val d'Anniviers map frame, west south east north
 UA = {'User-Agent': 'snowmap-resort-builder/1.0 (personal snow map project)'}
 # the frame in LV95 (a little generous)
-t = osr.CoordinateTransformation(osr.SpatialReference(), osr.SpatialReference())
 s4326 = osr.SpatialReference(); s4326.ImportFromEPSG(4326); s4326.SetAxisMappingStrategy(osr.OAMS_TRADITIONAL_GIS_ORDER)
 s2056 = osr.SpatialReference(); s2056.ImportFromEPSG(2056)
 tr = osr.CoordinateTransformation(s4326, s2056)
