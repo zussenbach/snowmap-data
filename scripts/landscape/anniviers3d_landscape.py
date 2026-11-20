@@ -2,12 +2,12 @@
 Val d'Anniviers: swisstopo swissBUILDINGS3D 3.0 (3D buildings with real roofs, free,
 CC BY 4.0 "© swisstopo") for the 3D model pilot.
 
-Reads each building's solid (Building_solid, a 3D triangle surface) and keeps its
-triangles, as roof (facing up) or wall (steep), without the floor. Swiss LV95 + heights.
+Reads each building's solid (Building_solid, a 3D triangle surface) and keeps all its
+triangles, marked flat-ish (roof or floor) or steep (wall). Swiss LV95 + heights.
 Makes anniviers3d_landscape_part*.zip with buildings_<tile>.npz:
   tri  float32 (n, 3, 3)  triangle corners, metres, relative to the tile's origin (e0, n0, 0)
   bid  int32   (n,)       building number within the tile
-  roof uint8   (n,)       1 = roof, 0 = wall
+  roof uint8   (n,)       2 = roof or floor (flat-ish), 0 = wall
   org  float64 (2,)       e0, n0
 Runs on GitHub (Actions > Landscape > anniviers3d).
 """
@@ -33,6 +33,11 @@ while url:
     items += d['features']
     url = next((l['href'] for l in d.get('links', []) if l.get('rel') == 'next'), None)
 print(len(items), 'tiles')
+# only the newest release (it covers the whole frame; older sheets are duplicates)
+yrs = sorted({it['id'].rsplit('_', 1)[-1] for it in items if it['id'].rsplit('_', 1)[-1].isdigit()})
+if yrs and os.environ.get('ALL_RELEASES') != '1':
+    items = [it for it in items if it['id'].endswith('_' + yrs[-1])]
+    print('newest release', yrs[-1], len(items), 'item(s)')
 
 os.makedirs('dl', exist_ok=True)
 outs, nb_all = [], 0
@@ -77,8 +82,10 @@ for k, it in enumerate(items, 1):
     T[:, :, 0] -= org[0]; T[:, :, 1] -= org[1]
     n = np.cross(T[:, 1] - T[:, 0], T[:, 2] - T[:, 0])
     nz = n[:, 2] / np.maximum(np.linalg.norm(n, axis=1), 1e-9)
-    keep = nz > -0.3                                    # drop the floors (facing down)
-    roof = (nz > 0.3).astype(np.uint8)
+    # keep everything: some solids face inwards, so "facing down" is not always the floor;
+    # flat-ish faces are marked 2 (roof or floor: told apart later by their height), walls 0
+    keep = np.ones(len(T), bool)
+    roof = np.where(np.abs(nz) > 0.3, 2, 0).astype(np.uint8)
     out = f'buildings_{it["id"]}.npz'
     np.savez_compressed(out, tri=T[keep].astype(np.float32), bid=np.array(bids, np.int32)[keep], roof=roof[keep], org=org)
     outs.append(out); nb_all += nb
